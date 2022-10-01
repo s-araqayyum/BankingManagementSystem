@@ -1,0 +1,127 @@
+﻿@model Loan
+@{
+    ViewData["Title"] = "Loan Apply";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Contact V1</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/mainn.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	<br />
+	<br />
+	<div style = "position:relative; left:80px; top:2px; background-color:yellow;">
+		<div class="container-contact1">
+			<div class="contact1-pic js-tilt" data-tilt>
+				<img src="https://cdn-icons-png.flaticon.com/512/1391/1391344.png" alt="IMG">
+			</div>
+
+			<form method="POST" class="contact1-form validate-form" asp-controller="Account" asp-action = "LoanApply">
+				<span class="contact1-form-title">
+					Apply for a smart loan program today!
+				</span>
+
+				<div class="wrap-input1 validate-input" data-validate = "Amount is required">
+					<input class="input1" asp-for="amount"  type="text" name="amount" placeholder="Amount">
+					<span class="shadow-input1"></span>
+				</div>
+				<table class="table table-hover table-dark">
+  <thead>
+    <tr class="table-primary">
+      <th scope="col">#</th>
+      <th scope="col">Loan Scheme</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="table-success">
+      <th scope="row">1</th>
+      <td>Auto Loan</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Student Loans</td>
+    </tr>
+    <tr class="table-danger">
+      <th scope="row">3</th>
+      <td colspan="2">Business Investment</td>
+    </tr>
+  </tbody>
+</table>
+
+				<div class="wrap-input1 validate-input" data-validate = "Amount is required">
+					<input class="input1" asp-for="Type" type="text" name="Type" placeholder="Please Enter Registered Loan Schemes">
+					<span class="shadow-input1"></span>
+				</div>
+				<div class="container" style="text-align:center">
+  <input type="submit" class="btn btn-info" value="Submit">
+</div>
+@if (TempData["Alert Message"] != null){
+	  <div class = "alert alert-success">
+		  <strong>Looking great so far!</strong @TempData["Alert Message"]
+			  </div>
+  }
+  else{
+	 <div class = "alert alert-error">
+		  <strong>There seems to be a problem </strong @TempData["Alert Message"]
+			  </div>
+  }
+			</form>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-23581568-13');
+</script>
+
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
+
+
+
+

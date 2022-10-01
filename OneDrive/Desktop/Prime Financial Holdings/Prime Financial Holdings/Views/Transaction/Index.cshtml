@@ -1,0 +1,100 @@
+﻿@model IEnumerable<Transaction>
+@{
+    ViewData["Title"] = "Index";
+}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <style>
+body {
+  background-image: url('https://digitalsynopsis.com/wp-content/uploads/2017/03/beautiful-color-gradients-backgrounds-078-cochiti-lake.png');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
+
+  <body>
+  
+  <div class="content">
+    
+    <div class="container">
+        <br />
+        <br />
+      <h2 class="mb-5">Transactions</h2>
+      </div>
+     
+      <table class ="table table-boredered table-striped" style="width:100">
+
+    <thead>
+        <tr>
+            <th>
+                Transaction ID
+            </th>
+            <th>
+                Amount
+            </th>
+            <th>
+                Beneficiary Account
+            </th>
+            <th>
+                Date
+            </th>
+            <th>
+                Time
+            </th>
+            <th>
+                Type
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tdoby>
+        @foreach(var obj in Model)
+        {
+            <tr class="table-secondary">
+                <td width="15%">
+                    @obj.TRX_ID
+                </td>
+                <td width = "10%">
+                    @obj.amount
+                </td>
+                <td width = "20%">
+                    @obj.beneficiaryAccount
+                </td>
+                <td width = "30%">
+                    @obj.Date
+                </td>
+                <td width = "20%">
+                    @obj.time
+                </td>
+                 <td width = "100%">
+                    @obj.type
+                </td>
+
+                <td>
+                </td>
+            </tr>
+        }
+    </tdoby>
+</table>
+  </div>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
+
